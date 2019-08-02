@@ -1,0 +1,17 @@
+alias gits='git status'
+alias gita='git add .'
+alias gitc='git commit -m '
+alias gith='git pull && git push'
+
+sshw() {
+       if [ "$#" = 3 ]
+       then
+               echo "\e[1;32mconnecting to 192.168.$2.$3\e[0m"
+               ssh $1@192.168.$2.$3
+       fi
+       if [ "$#" -eq 2 ]
+       then
+               echo "\e[1;32mconnecting to 192.168.0.$2\e[0m"
+               ssh $1@192.168.0.$2
+      fi
+}
