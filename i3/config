@@ -157,7 +157,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #        status_command i3status
 #}
 
-exec xrandr --output DP1 --auto --left-of eDP1
+# for multiple monitor configuration
+exec_always if xrandr | grep 'DP1 connected'; then xrandr --output DP1 --auto --left-of eDP1; \
+  else xrandr --output DP1 ; fi
 
 # Moving workspaces between screens 
 bindsym $mod+p move workspace to output left
