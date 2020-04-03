@@ -9,7 +9,7 @@ signal=10
 
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=MEM 
+label=RAM  
 separator=true
 interval=30
 
@@ -36,7 +36,7 @@ interval=180
 command=$SCRIPT_DIR/bandwidth2/bandwidth2
 interval=persist
 markup=pango
-label=↓↑
+label=↓↑ 
 WARN_RX=307200
 WARN_TX=30720
 CRIT_RX=512000
@@ -54,9 +54,21 @@ signal=10
 
 # Query my default IP address only on startup
 [ip]
-command=/sbin/ip -o -4 addr list wlp2s0 | awk '{print $4}' | cut -d/ -f1
+label=eth0 
+command=/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1
 interval=once
 color=#91E78B
+
+[ip]
+label=eth1 
+command=/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1
+interval=once
+color=#a8a032
+
+[battery2]
+command=$SCRIPT_DIR/battery2/battery2
+markup=pango
+interval=30
 
 # Date Time
 [time]
