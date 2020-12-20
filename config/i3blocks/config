@@ -54,14 +54,14 @@ signal=10
 
 # Query my default IP address only on startup
 [ip]
-label=eth0 
-command=/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1
+label=enp3s0f1 
+command=/sbin/ip -o -4 addr list enp3s0f1 | awk '{print $4}' | cut -d/ -f1
 interval=once
 color=#91E78B
 
 [ip]
-label=eth1 
-command=/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1
+label=wlp2s0 
+command=/sbin/ip -o -4 addr list wlp2s0 | awk '{print $4}' | cut -d/ -f1
 interval=once
 color=#a8a032
 
@@ -75,3 +75,4 @@ interval=30
 label=🕓 
 command=date '+%Y-%m-%d %H:%M'
 interval=30
+
