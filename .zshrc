@@ -63,8 +63,7 @@ ZSH_THEME="michelebologna"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# FZF (I did this in KDE setup)
-# export FZF_BASE=~/.oh-my-zsh/custom/plugins/fzf
+export FZF_BASE=~/.oh-my-zsh/custom/plugins/fzf
 # DISABLE_FZF_AUTO_COMPLETION="true"
 
 # Which plugins would you like to load?
@@ -118,3 +117,4 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
