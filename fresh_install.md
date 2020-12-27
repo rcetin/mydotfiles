@@ -12,6 +12,7 @@ Req:
  - sudo apt install libreoffice
  - sudo apt install sysstat # for cpu_usage i3blocks
  - sudo apt install tig
+ - sudo apt install rxvt-unicode
  
 
 ### Followed this tutorial https://github.com/k-vernooy/dotfiles
@@ -26,3 +27,4 @@ Req:
 
 ### lock screen
 - follow this tutorial https://github.com/pavanjadhaw/betterlockscreen 
+- install i3lock-color
