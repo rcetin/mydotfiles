@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=3.4.10
+Name=Standard Notes
+Comment=Standard Notes
+Icon=/home/rcetin/.local/share/icons/standard-notes-icon.png
+Type=Application
+Exec=/home/rcetin/standard-notes-3.5.11-linux-x86_64.AppImage %F
+Terminal=false
+MimeType=application/x-iso9660-appimage;
