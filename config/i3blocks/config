@@ -3,7 +3,6 @@ markup=none
 
 [volume]
 command=$SCRIPT_DIR/volume/volume
-label=🔊 
 interval=1
 signal=10
 
