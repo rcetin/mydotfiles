@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SONG=$(sp current | sed -n -r "s/Title\s*(.*)/\1/p") && \
+	ARTIST=$(sp current | sed -n -r "s/^Artist\s*(.*)/\1/p") &&\
+	echo "$ARTIST * $SONG"
+

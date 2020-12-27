@@ -7,9 +7,15 @@ label=🔊
 interval=1
 signal=10
 
+[spotify]
+command=$SCRIPT_DIR/ramco/spotify_current_song
+label=🎵️ 
+interval=5
+color=#99F4D2
+
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=RAM  
+label=RAM 
 separator=true
 interval=30
 
@@ -42,26 +48,22 @@ WARN_TX=30720
 CRIT_RX=512000
 CRIT_TX=51200
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-[mediaplayer]
-command=$SCRIPT_DIR/mediaplayer/mediaplayer > /dev/null 2>&1
-instance=spotify
-interval=5
-signal=10
-
 # Query my default IP address only on startup
 [ip]
-label=enp3s0f1 
-command=/sbin/ip -o -4 addr list enp3s0f1 | awk '{print $4}' | cut -d/ -f1
+label=eth0 
+command=/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1
 interval=once
 color=#91E78B
 
 [ip]
-label=wlp2s0 
-command=/sbin/ip -o -4 addr list wlp2s0 | awk '{print $4}' | cut -d/ -f1
+label=eth1 
+command=/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1
+interval=once
+color=#91E78B
+
+[ip]
+label=wlan0 
+command=/sbin/ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1
 interval=once
 color=#a8a032
 
