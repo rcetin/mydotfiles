@@ -1,19 +1,21 @@
-Req:
- - sudo apt install build-essential
- - sudo apt install git
- - sudo apt install suckless-tools
- - sudo apt install i3status
- - sudo apt install i3lock
- - sudo apt install net-tools
- - sudo apt install fonts-font-awesome acpi # for battery i3blocks
- - sudo apt install thunderbird
- - sudo apt install feh
- - sudo apt-get install fzf
- - sudo apt install libreoffice
- - sudo apt install sysstat # for cpu_usage i3blocks
- - sudo apt install tig
- - sudo apt install rxvt-unicode
- 
+### Initial Requirements
+
+```bash
+sudo apt install build-essential
+sudo apt install git
+sudo apt install suckless-tools
+sudo apt install i3status
+sudo apt install i3lock
+sudo apt install net-tools
+sudo apt install fonts-font-awesome acpi # for battery i3blocks
+sudo apt install thunderbird
+sudo apt install feh
+sudo apt-get install fzf
+sudo apt install libreoffice
+sudo apt install sysstat # for cpu_usage i3blocks
+sudo apt install tig
+sudo apt install rxvt-unicode
+```
 
 ### Followed this tutorial https://github.com/k-vernooy/dotfiles
 1. install i3-gaps from source
@@ -32,8 +34,10 @@ Req:
 
 ### Back to the ethX names
 
-- sudo gedit /etc/default/grub
-- change line GRUB_CMDLINE_LINUX=""    to     GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0" 
-- sudo update-grub
-- reboot
+```bash
+sudo gedit /etc/default/grub
+# change line GRUB_CMDLINE_LINUX=""    to     GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0" 
+sudo update-grub
+reboot
+```
 
