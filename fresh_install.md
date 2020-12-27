@@ -28,3 +28,12 @@ Req:
 ### lock screen
 - follow this tutorial https://github.com/pavanjadhaw/betterlockscreen 
 - install i3lock-color
+
+
+### Back to the ethX names
+
+- sudo gedit /etc/default/grub
+- change line GRUB_CMDLINE_LINUX=""    to     GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0" 
+- sudo update-grub
+- reboot
+
