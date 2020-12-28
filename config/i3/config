@@ -173,8 +173,11 @@ for_window [class="^.*"] border pixel 0
 ###################################################
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 100 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 100 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec br -i # increase screen brightness
+bindsym XF86MonBrightnessDown exec br -d # decrease screen brightness
+
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 100 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 100 # decrease screen brightness
 
 # keyboard layout
 exec setxkbmap -layout tr
@@ -215,6 +218,7 @@ bindsym $mod+l exec betterlockscreen -l dim
 
 # if nouveau is used -> exec --no-startup-id DISPLAY=:0 feh --randomize --bg-fill ~/Pictures/wallpaper/*
 # The below uses nvidia driver
+# add to crontab -e: */5 * * * * feh --randomize --bg-fill ~/Pictures/wallpaper/*
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper/*
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets

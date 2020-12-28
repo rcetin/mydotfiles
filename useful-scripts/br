@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCREEN1=$(xrandr -q | grep ' connected' | head -n 1 | sed -n -r "s/^([a-zA-Z0-9-]*).*/\1/p")
+BRIGHTNESS=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+
+echo "fr: $1"
+
+if [ $1 == "-i" ]
+then
+	xrandr --output $SCREEN1 --brightness $(echo "$BRIGHTNESS + 0.1" | bc)
+else
+	xrandr --output $SCREEN1 --brightness $(echo "$BRIGHTNESS - 0.1" | bc)
+fi
