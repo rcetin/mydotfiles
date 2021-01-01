@@ -183,11 +183,11 @@ bindsym XF86MonBrightnessDown exec br -d # decrease screen brightness
 exec setxkbmap -layout tr
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioStop exec playerctl stop
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec sp play
+bindsym XF86AudioPause exec sp pause
+bindsym XF86AudioStop exec sp play
+bindsym XF86AudioNext exec sp next
+bindsym XF86AudioPrev exec sp prev
 
 # resize
 bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
