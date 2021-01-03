@@ -85,6 +85,10 @@ URxvt*saveLines: 999999
 
 URxvt.keysym.Control-Shift-S:  searchable-scrollback:start
 
+!! Shift + page up/down
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
