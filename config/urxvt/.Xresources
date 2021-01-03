@@ -81,7 +81,9 @@ URxvt.keysym.Control-Meta-v: builtin-string:
 URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
-URxvt*saveLines: 9999
+URxvt*saveLines: 999999
+
+URxvt.keysym.Control-Shift-S:  searchable-scrollback:start
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
