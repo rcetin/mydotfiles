@@ -46,3 +46,7 @@ git clone --recursive https://github.com/Ventto/mons.git
 cd mons
 sudo make install
 
+### 256 color terminal - needed for tigrc color scheme
+sudo apt-get install rxvt-unicode-256color
+
+-> add `URxvt*termName: rxvt-unicode-256color` to the .XResources file of urxvt
