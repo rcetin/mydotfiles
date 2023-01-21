@@ -111,7 +111,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8:subl"
+set $ws8 "8"
 set $ws9 "9:mail"
 set $ws10 "10:console"
 
@@ -152,15 +152,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #        status_command i3status
 #}
 
-#### for multiple monitor configuration
-# exec_always if xrandr | grep 'DP-1 connected'; then xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --right-of eDP-1; \
-#   else xrandr --output eDP-1 --mode 1920x1080 ; fi
 
 ## mirror one monitor
-exec_always if xrandr | grep 'DP-2 connected'; then xrandr --output eDP-1 --mode 2560x1440 && mons -m; \
-  else xrandr --output eDP-1 --mode 2560x1440 ; fi
+#exec_always if xrandr | grep 'DP-2 connected'; then xrandr --output eDP-1 --mode 2560x1440 && mons -m; \
+#  else xrandr --output eDP-1 --mode 2560x1440 ; fi
 
-# Moving workspaces between screens 
+# Moving workspaces between screens
 bindsym $mod+p move workspace to output left
 
 ###################################################
@@ -178,7 +175,7 @@ bindsym XF86MonBrightnessDown exec br -d # decrease screen brightness
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 100 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 100 # decrease screen brightness
 
-# keyboard layout
+## keyboard layout
 exec setxkbmap -layout us
 
 # Media player controls
@@ -210,9 +207,15 @@ for_window [class="Thunderbird"] move to workspace $ws9
 #exec spotify
 #exec google-chrome
 #exec thunderbird
+#### for multiple monitor configuration
+# exec_always --no-startup-id autorandr --load work_two_mon
+# xrandr --fb 4480x1440 --output eDP-1 --mode 2560x1440 --output DP-1 --mode 1920x1080 --pos 2560x0
+# xrandr --fb 4480x1440 --output eDP-1 --off --output DP-1 --mode 2560x1440 --output DP-2 --mode 1920x1080 --pos 2560x0
+# xrandr --fb 7040x1440 --output eDP-1 --mode 2560x1440 --pos 4480x0 --output DP-1 --mode 2560x1440 --output DP-2 --mode 1920x1080 --pos 2560x0
+exec_always --no-startup-id xrandr --output eDP-1 --off --output DP-1 --mode 2560x1440
 
 # lock screen
-exec betterlockscreen -u ~/Pictures/wallpaper
+exec betterlockscreen -u ~/Pictures/wallpaper --fx dim,pixel
 bindsym $mod+l exec betterlockscreen -l dim
 
 # if nouveau is used -> exec --no-startup-id DISPLAY=:0 feh --randomize --bg-fill ~/Pictures/wallpaper/*
@@ -222,12 +225,10 @@ exec --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper/*
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
-exec_always --no-startup-id xrdb ~/.config/urxvt/.Xresources
-
 # Picom as Compositor // Picom slowed the system somehow
 # exec_always --no-startup-id picom --no-use-damage --config /home/rcetin/.config/picom/config
 
-# compton for transparency
-exec_always --no-startup-id compton --config ~/.config/compton/config
+# picom for transparency
+exec_always --no-startup-id picom --config ~/.config/picom/config
+# exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/config
 # exec_always --no-startup-id compton -b -c -f
-
