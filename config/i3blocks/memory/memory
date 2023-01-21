@@ -24,10 +24,16 @@ awk -v type=$TYPE '
 	mem_free=$2
 }
 /^Buffers:/ {
-	mem_free+=$2
+	buffers=$2
 }
 /^Cached:/ {
-	mem_free+=$2
+	cached=$2
+}
+/^SReclaimable:/ {
+	SReclaimable=$2
+}
+/^Shmem:/ {
+	Shmem=$2
 }
 /^SwapTotal:/ {
 	swap_total=$2
@@ -42,7 +48,7 @@ END {
 		total=swap_total/1024/1024
 	} else {
 		free=mem_free/1024/1024
-		used=(mem_total-mem_free)/1024/1024
+		used=((mem_total-mem_free) - (buffers + (cached + SReclaimable - Shmem)))/1024/1024
 		total=mem_total/1024/1024
 	}
 
