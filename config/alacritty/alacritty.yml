@@ -1,0 +1,25 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 1
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+selection:
+  save_to_clipboard: false
+
+shell:
+  program: /usr/bin/zsh
+
+import:
+  - ~/.alacritty-colorscheme/themes/ayu_dark.yaml
+
+env:
+# scale factor is needed otherwise font is too big.
+  WINIT_X11_SCALE_FACTOR: "1"
