@@ -1,0 +1,13 @@
+################################################################################
+## USER SETTINGS
+################################################################################
+
+## Moving workspaces between screens
+bindsym $mod+p move workspace to output left
+
+## Focus next window by mouse movement
+focus_follows_mouse yes
+
+## Add switch to tabbed and floating layout
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+d layout toggle split
