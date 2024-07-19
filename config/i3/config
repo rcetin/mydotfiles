@@ -206,6 +206,9 @@ bar {
 
 ## USER SETTINGS
 
+# adjust screen papers
+exec --no-startup-id sleep 2 && betterlockscreen -u ~/Pictures/wallpapers --fx dim,pixel && betterlockscreen -w dim
+
 # picom for transparency
 exec_always --no-startup-id picom --config ~/.config/picom/config
 
@@ -220,17 +223,17 @@ gaps outer 2
 for_window [class="^.*"] border pixel 3
 
 # lock screen
-exec betterlockscreen -u ~/Pictures/wallpapers --fx dim,pixel
 bindsym $mod+l exec betterlockscreen -l dim
-
-# desktop wallpaper
-exec --no-startup-id betterlockscreen -w dim
+bindsym $mod+Shift+s exec systemctl suspend
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# disable blank screen
+exec --no-startup-id xset s noblank
 
 # colors for focused windows
 client.focused          #b58900 #b58900 #fdf6e3 #cb4b16
