@@ -1,0 +1,8 @@
+[user]
+	name = Ramazan Cetin
+	email = ramazan1cetin@gmail.com
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
