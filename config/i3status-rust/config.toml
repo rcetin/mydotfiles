@@ -36,7 +36,7 @@ warning = 40
 
 [[block]]
 block = "sound"
-driver = "pulseaudio"
+driver = "alsa"
 
 
 # Uncomment below to enable battery
